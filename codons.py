@@ -7,6 +7,7 @@ f.close()
 
 def create_codon_dict(file_path):
   codon_dict = {}
+  
   with open(path, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
@@ -14,13 +15,15 @@ def create_codon_dict(file_path):
                 continue
 
             parts = line.split()
+
+            if len(parts) < 2:
+                continue
+
             codon = parts[0].upper()
-            amino_acid = " ".join(parts[1:]) 
+            amino_acid = parts[2].upper()
+
             codon_dict[codon] = amino_acid
   return codon_dict
-
-create_codon_dict(path)
-
 
 def test_create_codon_dict():
     result = create_codon_dict("data/codons.txt")
