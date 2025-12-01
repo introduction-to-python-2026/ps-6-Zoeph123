@@ -1,3 +1,4 @@
+
 import os
 path = "data/codons.txt"
 with open(path, "r", encoding="utf-8") as f:
@@ -20,3 +21,5 @@ def create_codon_dict(file_path):
             codon_dict[codon] = amino_acid
   return codon_dict
 
+
+create_codon_dict(path)
