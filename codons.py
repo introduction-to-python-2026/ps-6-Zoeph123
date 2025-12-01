@@ -16,9 +16,7 @@ def create_codon_dict(file_path):
             parts = line.split()
             codon = parts[0]
             amino_acid = " ".join(parts[1:]) 
-
             codon_dict[codon] = amino_acid
   return codon_dict
-
 
 create_codon_dict(path)
