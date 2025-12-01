@@ -14,7 +14,7 @@ def create_codon_dict(file_path):
                 continue
 
             parts = line.split()
-            codon = parts[0]
+            codon = parts[0].upper()
             amino_acid = " ".join(parts[1:]) 
             codon_dict[codon] = amino_acid
   return codon_dict
