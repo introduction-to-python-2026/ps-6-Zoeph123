@@ -4,10 +4,10 @@ with open(path, "r", encoding="utf-8") as f:
     rows = f.readlines()
 
 f.close()
-def create_codon_dict(file_path):
-    codon_dict = {}
 
-    with open(file_path, "r", encoding="utf-8") as f:
+def create_codon_dict(file_path):
+  codon_dict = {}
+  with open(path, "r", encoding="utf-8") as f:
         for line in f:
             line = line.strip()
             if not line:
@@ -15,10 +15,10 @@ def create_codon_dict(file_path):
 
             parts = line.split()
             codon = parts[0]
-            amino_acid = " ".join(parts[1:])
+            amino_acid = " ".join(parts[1:]) 
 
             codon_dict[codon] = amino_acid
+  return codon_dict
 
-    return codon_dict
 
-codons = create_codon_dict("data/codons.txt")
+create_codon_dict(path)
