@@ -1,3 +1,9 @@
+import os
+path = "data/codons.txt"
+with open(path, "r", encoding="utf-8") as f:
+    rows = f.readlines()
+
+f.close()
 def create_codon_dict(file_path):
     codon_dict = {}
 
