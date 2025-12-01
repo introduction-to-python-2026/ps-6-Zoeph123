@@ -1,4 +1,22 @@
-def create_codon_dict(file_path):
-    pass # Replace the pass with your code
+import os
+path = "data/codons.txt"
+with open(path, "r", encoding="utf-8") as f:
+    rows = f.readlines()
 
+f.close()
+
+def create_codon_dict(file_path):
+  codon_dict = {}
+  with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+
+            parts = line.split()
+            codon = parts[0]
+            amino_acid = " ".join(parts[1:]) 
+
+            codon_dict[codon] = amino_acid
+  return codon_dict
 
